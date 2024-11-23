@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
+    "lint": "eslint . --ext .ts,.tsx",
+    "format": "prettier --write .",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -16,7 +17,9 @@
     "postcss": "^8.4.49",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-hook-form": "^7.53.2",
     "react-query": "^3.39.3",
+    "react-router-dom": "^7.0.1",
     "react-table": "^7.8.0",
     "recharts": "^2.13.3",
     "tailwindcss": "^3.4.15",
@@ -26,6 +29,7 @@
     "@eslint/js": "^9.13.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
+    "@types/react-router-dom": "^5.3.3",
     "@vitejs/plugin-react": "^4.3.3",
     "eslint": "^9.15.0",
     "eslint-config-prettier": "^9.1.0",
