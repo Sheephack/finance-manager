@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import { FetchTransactions } from '../../application/usecases/transaction/FetchTransactions';
-import { TransactionAPI } from '../../infrastructure/api/TransactionAPI';
-import { Transaction } from '../../domain/models/Transaction';
+
 import AddTransactionForm from '../components/AddTransactionForm';
 import { useTransactionStore } from '../../store/useTransactionStore';
+import {auth} from '../../config/firebase';
 
 const Dashboard = () => {
     // const [transactions, setTransactions] = useState<Transaction[]>([]);
     const { transactions } = useTransactionStore();
+
+    const handleLogout = async () => {
+        await auth.signOut();
+        console.log("Logged out");
+    }
     
     // useEffect(() => {
     //     const fetchTransactions = async () => {
@@ -30,6 +33,9 @@ const Dashboard = () => {
                     </li>
                 ))}
             </ul>
+            <button onClick={handleLogout} className='mt-4 p-2 bg-red-500 text-white rounded'>
+                Logout
+            </button>
         </div>
     );
 }
